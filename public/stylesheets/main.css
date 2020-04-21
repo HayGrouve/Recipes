@@ -147,13 +147,7 @@ article{
     padding: 5px;
     padding-left: 10px;
 }
-img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -999;
-    width: 100%;
-}
+
 .white-space{
     white-space: pre-line;
 }
@@ -216,9 +210,10 @@ img{
     color: #2980b9;
     font-size: 2em;
 }
-@media only screen and (max-width: 1200px) {
-    img{position: static;
-        width: 360px;
-        margin-bottom: -4px;
-    }
-  }
+
+img{
+    position: static;
+    width: 360px;
+    margin-bottom: -4px;
+}
+
