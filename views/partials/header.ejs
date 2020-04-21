@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ceko's Recipes</title>
+    <script src="https://kit.fontawesome.com/e76b60c938.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="/scripts/lib/jQuery 3.4.1.js"></script>
+</head>
+
+<body>
+    <div id="navbar">
+        <div></div>
+        <div id="nav-logs">
+            <% if(!currentUser){ %>
+            <a class="register" href="/register"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a class="log" href="/login"><i class="fas fa-user"></i> Login</a>
+            <% } %>
+            <% if(currentUser){ %>
+            <a href=""><i class="fas fa-user"></i><%= currentUser.username %></a>
+            <a class="log" href="/logout"><i class="fas fa-user-times"></i> Logout</a>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="container flash">
+        <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+
+        <% if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+    </div>
+
+    <div id="container">

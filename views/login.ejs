@@ -1,0 +1,11 @@
+<%- include('partials/header.ejs') %>
+<section class="register-login-padding">
+    <form action="/login" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="******" required>
+        <input type="submit" value="Login">
+    </form>
+</section>
+<%- include('partials/footer.ejs') %>

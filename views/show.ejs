@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') %>
+<% if(recipe.img !== ''){ %>
+<img src="<%= recipe.img %>">
+<% } %>
+<section>
+    <ul>
+        <li>
+            <h1>
+                <form id="delete-form" action="/delete" method="post">
+                    <span class="deleteBtn">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                    <input type="hidden" name="id" value="<%= recipe._id %>">
+                </form>
+                <%= recipe.title %>
+            </h1>
+        </li>
+    </ul>
+    <article>
+        <h4>Ingredients:</h4>
+        <p class="white-space"><%= recipe.ingredients %></p>
+    </article>
+    <hr>
+    <article>
+        <h4>Recipe:</h4>
+        <p class="white-space"><%= recipe.recipe %></p>
+    </article>
+    <hr>
+    <article><a href="<%= recipe.url %>" target="_blank">Recource</a>
+        <div class="float-right">
+            <a href="/recipe/<%= recipe.id %>/edit" id="edit">Edit</a>
+            |
+            <a href="/">Home</a>
+        </div>
+    </article>
+</section>
+<%- include('partials/footer.ejs') %>

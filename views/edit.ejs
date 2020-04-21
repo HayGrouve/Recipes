@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+<% if(recipe.img !== ''){ %>
+<img src="<%= recipe.img %>">
+<% } %>
+<section>
+    <form action="/recipe/update/<%= recipe.id%>" method="post">
+        <article>
+            <h4>Title:</h4>
+            <input type="text" name="recipe[title]" value="<%= recipe.title %>">
+        </article>
+        <article>
+            <h4>Ingredients:</h4>
+            <textarea class="ingredients" name="recipe[ingredients]" cols="30"
+                rows="10"><%= recipe.ingredients %></textarea>
+        </article>
+        <hr>
+        <article>
+            <h4>Recipe:</h4>
+            <textarea name="recipe[recipe]" cols="30" rows="10"><%= recipe.recipe %></textarea>
+        </article>
+        <hr>
+        <article>
+            <h4>Recource:</h4>
+            <input type="text" name="recipe[url]" value="<%= recipe.url %>" placeholder="Url">
+            <h4>Image:</h4>
+            <input type="text" name="recipe[img]" value="<%= recipe.img %>" placeholder="Img">
+        </article>
+        <input type="submit" value="Edit">
+        <div class="edit-home-btn">
+            <a href='/'>Home</a>
+        </div>
+    </form>
+</section>
+<%- include('partials/footer.ejs') %>
