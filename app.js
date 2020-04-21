@@ -125,21 +125,22 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-    if(req.body.password.length < 6){
+    if (req.body.password.length < 6) {
         req.flash('error', 'Password must be atleast 6 characters long!');
         res.redirect('/register');
-    }
-    User.register(new User({
-        username: req.body.username
-    }), req.body.password, (err, user) => {
-        if (err || !user) {
-            req.flash('error', 'Username already taken');
-            res.redirect('/register');
-        }
-        passport.authenticate('local')(req, res, () => {
-            res.redirect('/');
+    } else {
+        User.register(new User({
+            username: req.body.username
+        }), req.body.password, (err, user) => {
+            if (err || !user) {
+                req.flash('error', 'Username already taken');
+                res.redirect('/register');
+            }
+            passport.authenticate('local')(req, res, () => {
+                res.redirect('/');
+            });
         });
-    });
+    }
 });
 
 //LOGIN
@@ -149,7 +150,7 @@ app.get('/login', (req, res) => {
 
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureFlash:'Incorect username or password',
+    failureFlash: 'Incorect username or password',
     failureRedirect: '/login'
 }), (req, res) => {
 });

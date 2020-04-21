@@ -40,31 +40,12 @@
         </div>
     </nav>
 
-    <!-- MY NAVBAR -->
-    <!-- <div id="navbar">
-		<div>
-            <a class="logo" href="/"><i class="fas fa-utensils logo-icon"></i></a>
-        </div>
-        <div></div>
-        <div id="nav-logs">
-            <% if(!currentUser){ %>
-            <a class="logo" href="/register"><i class="fas fa-user-plus"></i> Sign Up</a>
-            <a class="logo" href="/login"><i class="fas fa-user"></i> Login</a>
-            <% } %>
-            <% if(currentUser){ %>
-            <a href=""><i class="fas fa-user"></i><%= currentUser.username %></a>
-            <a class="logo" href="/logout"><i class="fas fa-user-times"></i> Logout</a>
-            <% } %>
-        </div>
-    </div> -->
-
     <div class="container flash">
         <% if(error && error.length > 0){ %>
         <div class="alert alert-danger" role="alert">
             <%= error %>
         </div>
         <% } %>
-
         <% if(success && success.length > 0){ %>
         <div class="alert alert-success" role="alert">
             <%= success %>
