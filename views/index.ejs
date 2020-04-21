@@ -1,5 +1,6 @@
 <%- include('partials/header.ejs') %>
-<h1>Ceko's Recipes <i class="fas fa-plus"></i></h1>
+<h1>Ceko's Recipes <% if(currentUser && currentUser.isAdmin) { %><i class="fas fa-plus"></i><% } %></h1>
+<% if(currentUser && currentUser.isAdmin) { %>
 <form id="form" action="/recipe" method="post">
     <input type="text" name="recipe[title]" placeholder="Title" required>
     <textarea name="recipe[ingredients]" cols="30" rows="10" placeholder="Ingredients" required></textarea>
@@ -8,6 +9,7 @@
     <input type="text" name="recipe[img]" placeholder="Img">
     <input type="submit">
 </form>
+<% } %>
 <ul>
     <% recipes.forEach(recipe => { %>
     <li>

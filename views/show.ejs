@@ -6,12 +6,14 @@
     <ul>
         <li>
             <h1>
+                <% if(currentUser && currentUser.isAdmin) { %>
                 <form id="delete-form" action="/delete" method="post">
                     <span class="deleteBtn">
                         <i class="fas fa-trash-alt"></i>
                     </span>
                     <input type="hidden" name="id" value="<%= recipe._id %>">
                 </form>
+                <% } %>
                 <%= recipe.title %>
             </h1>
         </li>
@@ -28,8 +30,10 @@
     <hr>
     <article><a href="<%= recipe.url %>" target="_blank">Recource</a>
         <div class="float-right">
+            <% if(currentUser && currentUser.isAdmin) { %>
             <a href="/recipe/<%= recipe.id %>/edit" id="edit">Edit</a>
             |
+            <% } %>
             <a href="/">Home</a>
         </div>
     </article>

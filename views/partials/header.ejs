@@ -23,12 +23,12 @@
         <div></div>
         <div id="nav-logs">
             <% if(!currentUser){ %>
-            <a class="logo-buttons" href="/register"><i class="fas fa-user-plus"></i> Sign Up</a>
-            <a class="logo-buttons" href="/login"><i class="fas fa-user"></i> Login</a>
+            <a class="logo" href="/register"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a class="logo" href="/login"><i class="fas fa-user"></i> Login</a>
             <% } %>
             <% if(currentUser){ %>
             <a href=""><i class="fas fa-user"></i><%= currentUser.username %></a>
-            <a class="logo-buttons" href="/logout"><i class="fas fa-user-times"></i> Logout</a>
+            <a class="logo" href="/logout"><i class="fas fa-user-times"></i> Logout</a>
             <% } %>
         </div>
     </div>
