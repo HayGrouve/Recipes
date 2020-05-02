@@ -129,6 +129,7 @@ li:hover span {
 }
 .fa-plus {
     float: right;
+    cursor: pointer;
 }
 #container {
     background: #f7f7f7;
