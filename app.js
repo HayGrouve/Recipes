@@ -23,6 +23,7 @@ mongoose.connection.on('connected', () => {
 //APP CONFIG
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+mongoose.set('useCreateIndex', true);
 app.use(express.static(__dirname + '/public'));
 app.use(flash());
 
@@ -162,6 +163,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('*', (req, res) => {
+	req.flash('error', '404 Page not found!');
     res.redirect('/');
 });
 

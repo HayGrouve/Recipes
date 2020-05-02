@@ -1,13 +1,13 @@
 <%- include('partials/header.ejs') %>
-<h1>Ceko's Recipes <% if(currentUser && currentUser.isAdmin) { %><i class="fas fa-plus"></i><% } %></h1>
+<h1>Рецептите на Цеко <% if(currentUser && currentUser.isAdmin) { %><i class="fas fa-plus"></i><% } %></h1>
 <% if(currentUser && currentUser.isAdmin) { %>
 <form id="form" action="/recipe" method="post">
-    <input type="text" name="recipe[title]" placeholder="Title" required>
-    <textarea name="recipe[ingredients]" cols="30" rows="10" placeholder="Ingredients" required></textarea>
-    <textarea name="recipe[recipe]" cols="30" rows="10" placeholder="Recipe" required></textarea>
-    <input type="text" name="recipe[url]" placeholder="Url">
-    <input type="text" name="recipe[img]" placeholder="Img">
-    <input type="submit">
+    <input type="text" name="recipe[title]" placeholder="Заглавие" required>
+    <textarea name="recipe[ingredients]" cols="30" rows="10" placeholder="Продукти" required></textarea>
+    <textarea name="recipe[recipe]" cols="30" rows="10" placeholder="Рецепта" required></textarea>
+    <input type="text" name="recipe[url]" placeholder="Линк">
+    <input type="text" name="recipe[img]" placeholder="Снимка">
+    <input type="submit" value="Добави">
 </form>
 <% } %>
 <ul>

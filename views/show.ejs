@@ -19,22 +19,22 @@
         </li>
     </ul>
     <article>
-        <h4>Ingredients:</h4>
+        <h4>Продукти:</h4>
         <p class="white-space"><%= recipe.ingredients %></p>
     </article>
     <hr>
     <article>
-        <h4>Recipe:</h4>
+        <h4>Начин на приготвяне:</h4>
         <p class="white-space"><%= recipe.recipe %></p>
     </article>
     <hr>
-    <article><a href="<%= recipe.url %>" target="_blank">Recource</a>
+    <article><a href="<%= recipe.url %>" target="_blank">Ресурс</a>
         <div class="float-right">
             <% if(currentUser && currentUser.isAdmin) { %>
-            <a href="/recipe/<%= recipe.id %>/edit" id="edit">Edit</a>
+            <a href="/recipe/<%= recipe.id %>/edit" id="edit">Редактирай</a>
             |
             <% } %>
-            <a href="/">Home</a>
+            <a href="/">Начало</a>
         </div>
     </article>
 </section>

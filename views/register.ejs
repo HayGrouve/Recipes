@@ -1,11 +1,11 @@
 <%- include('partials/header.ejs') %>
 <form action="/register" method="post">
     <section class="register-login-padding">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Username" required>
-        <label for="password">Password</label>
+        <label for="username">Потребителско име</label>
+        <input type="text" name="username" id="username" placeholder="Потребителско име" required autofocus>
+        <label for="password">Парола</label>
         <input type="password" name="password" id="password" placeholder="******" required>
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Регистрация">
     </section>
 </form>
 <%- include('partials/footer.ejs') %>
